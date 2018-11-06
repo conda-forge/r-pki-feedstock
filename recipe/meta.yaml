@@ -8,16 +8,17 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: PKI_{{ version }}.tar.gz
-  url:
-    - {{ cran_mirror }}/src/contrib/PKI_{{ version }}.tar.gz
-    - {{ cran_mirror }}/src/contrib/Archive/PKI/PKI_{{ version }}.tar.gz
-  sha256: d2f76d17388aae17695073e97693174941ce64805e70cfceb57dc2cf569743f7
+  - url:
+      - {{ cran_mirror }}/src/contrib/PKI_{{ version }}.tar.gz
+      - {{ cran_mirror }}/src/contrib/Archive/PKI/PKI_{{ version }}.tar.gz
+    sha256: d2f76d17388aae17695073e97693174941ce64805e70cfceb57dc2cf569743f7
+  - url: https://www.openssl.org/source/openssl-1.0.2p.tar.gz  # [win]
+    sha256: 50a98e07b1a89eb8f6a99477f262df71c6fa7bef77df4dc83025a2845c827d00  # [win]
+    folder: src/win32  # [win]
 
 build:
   merge_build_host: True  # [win]
-  number: 0
-  skip: True  # [win]
+  number: 1
 
   rpaths:
     - lib/R/lib/
@@ -41,11 +42,13 @@ requirements:
   host:
     - r-base
     - r-base64enc
+    - {{native}}openssl
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-base64enc
+    - {{native}}openssl          # [win]
 
 test:
   commands:
