@@ -1,4 +1,4 @@
-{% set version = '0.1-5.1' %}
+{% set version = "0.1-7" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,14 +11,14 @@ source:
   - url:
       - {{ cran_mirror }}/src/contrib/PKI_{{ version }}.tar.gz
       - {{ cran_mirror }}/src/contrib/Archive/PKI/PKI_{{ version }}.tar.gz
-    sha256: d2f76d17388aae17695073e97693174941ce64805e70cfceb57dc2cf569743f7
+    sha256: 21672fd34d4e585a696c0cfa72fcf1691930a3f88bd8a22a88620d845ed202f8
   - url: https://www.openssl.org/source/openssl-1.0.2p.tar.gz  # [win]
     sha256: 50a98e07b1a89eb8f6a99477f262df71c6fa7bef77df4dc83025a2845c827d00  # [win]
     folder: src/win32  # [win]
 
 build:
-  merge_build_host: True  # [win]
-  number: 1003
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -57,10 +57,9 @@ test:
 about:
   home: http://www.rforge.net/PKI
   license: GPL-2 (>= 2)
-  summary: PKI functions such as verifying certificates, RSA encription and signing which can
-    be used to build PKI infrastructure and perform cryptographic tasks.
+  summary: PKI functions such as verifying certificates, RSA encription and signing which can be used to build PKI infrastructure and perform cryptographic tasks.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
