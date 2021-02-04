@@ -12,8 +12,8 @@ source:
       - {{ cran_mirror }}/src/contrib/PKI_{{ version }}.tar.gz
       - {{ cran_mirror }}/src/contrib/Archive/PKI/PKI_{{ version }}.tar.gz
     sha256: 4539bd0bbf576024279a4a98dc52298d3fc0c1cae3b404174451dd1e682d6762
-  - url: https://www.openssl.org/source/openssl-1.0.2p.tar.gz  # [win]
-    sha256: 50a98e07b1a89eb8f6a99477f262df71c6fa7bef77df4dc83025a2845c827d00  # [win]
+  - url: https://www.openssl.org/source/openssl-1.0.2u.tar.gz  # [win]
+    sha256: ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16  # [win]
     folder: src/win32  # [win]
 
 build:
