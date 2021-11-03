@@ -1,4 +1,4 @@
-{% set version = "0.1-8" %}
+{% set version = "0.1-9" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,14 +11,14 @@ source:
   - url:
       - {{ cran_mirror }}/src/contrib/PKI_{{ version }}.tar.gz
       - {{ cran_mirror }}/src/contrib/Archive/PKI/PKI_{{ version }}.tar.gz
-    sha256: 4539bd0bbf576024279a4a98dc52298d3fc0c1cae3b404174451dd1e682d6762
+    sha256: c69f0e05f39aa7ff574383e8808778d22941841543b4c88c0b75af54aee41fc9
   - url: https://www.openssl.org/source/openssl-1.0.2u.tar.gz  # [win]
     sha256: ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16  # [win]
     folder: src/win32  # [win]
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
