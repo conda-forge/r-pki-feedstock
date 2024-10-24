@@ -1,5 +1,4 @@
 {% set version = "0.1-14" %}
-
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -16,7 +15,7 @@ source:
     folder: src/win32  # [win]
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,12 +38,10 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-
   host:
     - r-base
     - r-base64enc
     - openssl
-
   run:
     - r-base
     - r-base64enc
@@ -56,12 +53,15 @@ test:
     - "\"%R%\" -e \"library('PKI')\""  # [win]
 
 about:
-  home: http://www.rforge.net/PKI
+  home: https://www.rforge.net/PKI
+  dev_url: https://github.com/s-u/PKI
   license: GPL-2.0-or-later
   summary: PKI functions such as verifying certificates, RSA encription and signing which can be used to build PKI infrastructure and perform cryptographic tasks.
   license_family: GPL3
   license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - LICENSE
 
 extra:
   recipe-maintainers:
