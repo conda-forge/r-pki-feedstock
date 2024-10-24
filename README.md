@@ -7,33 +7,30 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pki-feedstock
 About r-pki
 -----------
 
-Home: http://www.rforge.net/PKI
+Home: https://www.rforge.net/PKI
 
 Package license: GPL-2.0-or-later
 
 Summary: PKI functions such as verifying certificates, RSA encription and signing which can be used to build PKI infrastructure and perform cryptographic tasks.
+
+Development: https://github.com/s-u/PKI
 
 About r-pki
 -----------
 
-Home: http://www.rforge.net/PKI
+Home: https://www.rforge.net/PKI
 
 Package license: GPL-2.0-or-later
 
 Summary: PKI functions such as verifying certificates, RSA encription and signing which can be used to build PKI infrastructure and perform cryptographic tasks.
+
+Development: https://github.com/s-u/PKI
 
 Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/r-pki-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/r-pki-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
